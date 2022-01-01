@@ -1,24 +1,47 @@
 import "./ExpenseForm.css";
+import { useState } from "react";
 
-const ExpenseForm = () => {
-    const titleChangeHandler = ()=> {
+function ExpenseForm() {
+    const [enteredTitle, setEnteredTitle] = useState("");
+    const [enteredAmount, setEnteredAmount] = useState("");
+    const [enteredTime, setEnteredTime] = useState("");
 
-    }
+    const titleChangeHandler = (event) => {
+        setEnteredTitle(event.target.value);
+    };
+
+    const amountChangeHandler = (event) => {
+        setEnteredAmount(event.target.value);
+    };
+
+    const timeChangeHandler = (event) => {
+        setEnteredTime(event.target.value);
+    };
+
     return (
         <form>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
-                    <label >Title</label>
-                    <input type="text"  onChange={titleChangeHandler}/>
+                    <label>Title</label>
+                    <input type="text" onChange={titleChangeHandler} />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type="number" min="0.01" step="0.01" onChange={} />
+                    <input
+                        type="number"
+                        min="0.01"
+                        step="0.01"
+                        onChange={amountChangeHandler}
+                    />
                 </div>
 
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="2021-01-01" onChange={}/>
+                    <input
+                        type="date"
+                        min="2021-01-01"
+                        onChange={timeChangeHandler}
+                    />
                 </div>
             </div>
             <div className="new-expense__actions">
@@ -26,6 +49,6 @@ const ExpenseForm = () => {
             </div>
         </form>
     );
-};
+}
 
 export default ExpenseForm;
