@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./NewExpense.css";
-import ExpenseForm from "./ExpenseForm";
+import "../NewExpense/NewExpense.css";
+import ExpenseForm from "../ExpenseForm/ExpenseForm";
 import { v4 as uuidv4 } from "uuid";
 
 const NewExpense = (props) => {
@@ -27,7 +27,10 @@ const NewExpense = (props) => {
                 <button onClick={startEditingHandler}>Add expense</button>
             )}
             {isEditing && (
-                <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancel={stopEditingHandler} />
+                <ExpenseForm
+                    onSaveExpenseData={saveExpenseDataHandler}
+                    onCancel={stopEditingHandler}
+                />
             )}
         </div>
     );
