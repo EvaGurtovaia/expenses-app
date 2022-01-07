@@ -11,6 +11,9 @@ function ExpenseItem(props) {
                 <h2>{props.title}</h2>
                 <div className="expense-item__price">${props.amount}</div>
             </div>
+            <button className="button-to__delete">
+                <i class="fas fa-trash" />
+            </button>
         </Card>
     );
 }
