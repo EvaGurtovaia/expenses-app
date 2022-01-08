@@ -12,10 +12,15 @@ function App() {
         });
     };
 
+    const deleteExpenseHandler = id => {
+        let updatedExpenses = [...expenses].filter((expense) => expense.id !== id);
+        setExpenses(updatedExpenses);
+      };
+
     return (
         <div className="App">
             <NewExpense onAddExpense={addExpenseHandler} />
-            <Expenses expenses={expenses} />
+            <Expenses expenses={expenses} onDeleteExpense={deleteExpenseHandler}/>
         </div>
     );
 }

@@ -13,6 +13,7 @@ function Expenses(props) {
     const filterChangeHandler = (selectedYear) => {
         setFilteredYear(selectedYear);
     };
+    const onDelete = props.onDeleteExpense;
 
     return (
         <div>
@@ -32,6 +33,7 @@ function Expenses(props) {
                             title={expense.title}
                             amount={expense.amount}
                             date={expense.date}
+                            onDelete={onDelete}
                         />
                     ))
                 )}
